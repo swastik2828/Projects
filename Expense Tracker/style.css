@@ -1,0 +1,41 @@
+/* Hero Section */
+.hero {
+  height: 90vh;
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  color: white;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background: #121212;
+  color: white;
+}
+body.dark-mode .navbar {
+  background-color: #1c1c1c !important;
+}
+body.dark-mode .card {
+  background-color: #222;
+  color: white;
+}
+
+/* Transaction Colors */
+.income {
+  color: green;
+  font-weight: bold;
+}
+.expense {
+  color: red;
+  font-weight: bold;
+}
+
+/* Button hover animation */
+button:hover {
+  transform: scale(1.05);
+  transition: 0.2s ease-in-out;
+}
