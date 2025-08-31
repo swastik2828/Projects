@@ -1,0 +1,400 @@
+/* General */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+}
+
+.transparent-nav {
+  background: transparent;
+  transition: background 0.4s;
+}
+.solid-nav {
+  background: #1E3A8A !important;
+}
+.navbar.scrolled {
+  background: #1E3A8A !important;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #00a2ff !important;
+  transition: color 0.2s, background 0.2s;
+}
+/* Hero */
+#hero {
+  height: 100vh;
+  background: linear-gradient(135deg, #1E3A8A, #10B981);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.typing-text {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.btn-cta {
+  background: #F59E0B;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  color: #fff;
+  transition: 0.3s;
+}
+.btn-cta:hover {
+  box-shadow: 0 0 15px #F59E0B;
+}
+
+/* Services */
+.service-tile,
+.portfolio-tile {
+  position: relative;
+  overflow: hidden;
+  background: #1E3A8A;
+  color: white;
+  border-radius: 18px;
+  cursor: pointer;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.4s cubic-bezier(.4,0,.2,1), transform 0.3s cubic-bezier(.4,0,.2,1);
+  box-shadow: 0 8px 32px rgba(30,58,138,0.18), 0 1.5px 6px rgba(16,185,129,0.10);
+  padding: 28px 18px 18px 18px;
+}
+
+.service-tile:hover,
+.portfolio-tile:hover {
+  box-shadow: 0 16px 48px 0 rgba(16,185,129,0.25), 0 2px 8px rgba(30,58,138,0.12);
+  transform: translateY(-8px) scale(1.03) rotate(-1deg);
+}
+
+.service-tile .front,
+.portfolio-tile .front {
+  padding: 10px 10px 0 10px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  z-index: 1;
+  transition: filter 0.4s, opacity 0.4s;
+  text-align: center;
+}
+
+.service-tile .back,
+.portfolio-tile .back {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 18px 18px 18px;
+  background: rgba(16, 185, 129, 0.93);
+  color: #fff;
+  border-radius: 18px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s cubic-bezier(.4,0,.2,1);
+  z-index: 2;
+  box-shadow: 0 8px 32px rgba(30,58,138,0.10);
+  font-size: 1rem;
+}
+
+.service-tile:hover .back,
+.portfolio-tile:hover .back {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.service-tile:hover .front,
+.portfolio-tile:hover .front {
+  filter: blur(2.5px);
+  opacity: 0.4;
+}
+
+.service-img,
+.portfolio-img {
+  background: #fff;
+  border-radius: 20%;
+  padding: 12px;
+  box-shadow: 0 2px 8px rgba(30,58,138,0.10);
+  margin-bottom: 18px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+}
+
+.service-tile:hover .service-img,
+.portfolio-tile:hover .portfolio-img {
+  transform: scale(1.12) rotate(8deg);
+  box-shadow: 0 4px 16px rgba(16,185,129,0.18);
+}
+
+/* Portfolio Section Animations */
+#portfolio .portfolio-tile {
+  opacity: 0;
+  transform: translateY(40px) scale(0.97);
+  transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+}
+#portfolio .portfolio-tile.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Logo in Navbar */
+.logo-img {
+  height: 48px;
+  width: auto;
+  box-shadow: 0 2px 8px rgba(30,58,138,0.10);
+  background: transparent;
+  padding: 2px 8px;
+}
+
+/* Why Us Image Styling */
+.why-img {
+  background: #e0e7ff;
+  border-radius: 50%;
+  padding: 8px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 8px rgba(30,58,138,0.08);
+}
+
+/* Animations */
+.animate-service {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+}
+.animate-service.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-why {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+}
+.animate-why.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Animation for About and Privacy Policy sections */
+.animate-about {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+}
+.animate-about.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Footer */
+footer {
+  background: #1E3A8A;
+  color: #fff;
+}
+.social-icons a {
+  margin-left: 15px;
+  font-size: 1.5rem;
+  color: #fff;
+  transition: color 0.3s, transform 0.3s;
+}
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+.social-icons a:nth-child(1):hover { color: #25D366; }  /* WhatsApp */
+.social-icons a:nth-child(2):hover { color: #0077B5; }  /* LinkedIn */
+.social-icons a:nth-child(3):hover { color: #1877F2; }  /* Facebook */
+.social-icons a:nth-child(4):hover { color: #E4405F; }  /* Instagram */
+
+/* Go to Top Button */
+#goTopBtn {
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+#goTopBtn:hover {
+  opacity: 1;
+  background: #1E3A8A;
+}
+
+/* Credentials Section */
+.cred-tile {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(30,58,138,0.10);
+  padding: 32px 18px 18px 18px;
+  position: relative;
+  min-height: 320px;
+  overflow: hidden;
+  transition: box-shadow 0.4s, transform 0.3s;
+  cursor: pointer;
+}
+.cred-tile .cred-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(30,58,138,0.10);
+  background: #e0e7ff;
+}
+.cred-tile .cred-back {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(16, 185, 129, 0.93);
+  color: #fff;
+  border-radius: 18px;
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 18px;
+  font-size: 1rem;
+  transition: opacity 0.5s cubic-bezier(.4,0,.2,1);
+  z-index: 2;
+}
+.cred-tile.hovered .cred-back {
+  opacity: 1;
+  pointer-events: auto;
+}
+.cred-tile.hovered > div:not(.cred-back) {
+  filter: blur(2px);
+  opacity: 0.4;
+}
+
+/* Contact Form */
+.contact-form {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(30,58,138,0.10);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* --- FLIP CARD EFFECT FOR DESKTOP & MOBILE --- */
+.service-tile, .portfolio-tile, .cred-tile {
+  perspective: 1200px;
+  background: none;
+  border: none;
+  box-shadow: none;
+  min-height: 260px;
+  background: transparent;
+}
+
+.service-tile .front, .service-tile .back,
+.portfolio-tile .front, .portfolio-tile .back,
+.cred-tile .front, .cred-tile .cred-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  left: 0; top: 0;
+  border-radius: 18px;
+  transition: transform 0.6s cubic-bezier(.4,0,.2,1), opacity 0.4s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 18px 18px 18px;
+}
+
+.service-tile .front, .portfolio-tile .front, .cred-tile .front {
+  background: #1E3A8A;
+  color: #fff;
+  z-index: 2;
+  transform: rotateY(0deg);
+  opacity: 1;
+}
+
+.service-tile .back, .portfolio-tile .back, .cred-tile .cred-back {
+  background: rgba(16, 185, 129, 0.93);
+  color: #fff;
+  z-index: 3;
+  transform: rotateY(180deg);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.service-tile, .portfolio-tile, .cred-tile {
+  position: relative;
+  min-height: 260px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 32px rgba(30,58,138,0.18), 0 1.5px 6px rgba(16,185,129,0.10);
+  border-radius: 18px;
+  background: #1E3A8A;
+  overflow: visible;
+}
+
+/* Desktop: Flip on hover */
+@media (hover: hover) and (pointer: fine) {
+  .service-tile:hover .front,
+  .portfolio-tile:hover .front,
+  .cred-tile:hover .front {
+    transform: rotateY(-180deg);
+    opacity: 0;
+    pointer-events: none;
+  }
+  .service-tile:hover .back,
+  .portfolio-tile:hover .back,
+  .cred-tile:hover .cred-back {
+    transform: rotateY(0deg);
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+/* Mobile: Flip on .flipped class */
+@media (max-width: 767.98px) {
+  .service-tile.flipped .front,
+  .portfolio-tile.flipped .front,
+  .cred-tile.flipped .front {
+    transform: rotateY(-180deg);
+    opacity: 0;
+    pointer-events: none;
+  }
+  .service-tile.flipped .back,
+  .portfolio-tile.flipped .back,
+  .cred-tile.flipped .cred-back {
+    transform: rotateY(0deg);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .more-details-btn, .close-details-btn {
+    display: inline-block !important;
+    margin-top: 12px;
+  }
+}
+
+/* Hide mobile buttons on desktop */
+@media (min-width: 768px) {
+  .more-details-btn, .close-details-btn {
+    display: none !important;
+  }
+}
+
+/* Always show view certificate/demo button on back */
+.view-cert-btn {
+  display: inline-block;
+  margin-top: 12px;
+}
+/* Ensure no blur remains when not hovered or when flipping back */
+.cred-tile .front,
+.service-tile .front,
+.portfolio-tile .front {
+  filter: none !important;
+  opacity: 1;
+}
+@media (hover: hover) and (pointer: fine) {
+  .service-tile:hover .front,
+  .portfolio-tile:hover .front,
+  .cred-tile:hover .front {
+    filter: blur(2.5px);
+    opacity: 0.4;
+  }
+}
